@@ -1,0 +1,88 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/text_color_primary</item>
+        <item name="android:textColorSecondary">@color/text_color_secondary</item>
+        <item name="android:colorBackground" tools:ignore="PrivateResource">
+            @color/background_material_light
+        </item>
+        <item name="android:colorButtonNormal" tools:targetApi="lollipop">@color/colorPrimary</item>
+    </style>
+
+    <!-- Title Main Screen -->
+    <style name="title_main">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margins</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/passion_one</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/text_title_main</item>
+    </style>
+
+    <!-- EditText Main Screen-->
+    <style name="editText_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margins</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">serif-monospace</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/text_edittext</item>
+    </style>
+
+    <!-- Buttons style -->
+    <style name="button_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margins</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/passion_one</item>
+        <item name="android:paddingTop">@dimen/margins</item>
+        <item name="android:paddingBottom">@dimen/margins</item>
+        <item name="android:textSize">@dimen/text_button</item>
+    </style>
+
+    <!-- CardView style -->
+    <style name="card_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margins</item>
+    </style>
+
+    <!-- Questions style -->
+    <style name="questions_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/arimo</item>
+        <item name="android:paddingBottom">@dimen/margins</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/quiz_text</item>
+    </style>
+
+    <!-- Answers style -->
+    <style name="answers_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/arimo</item>
+        <item name="android:paddingLeft">@dimen/margins</item>
+        <item name="android:textSize">@dimen/quiz_text</item>
+    </style>
+
+    <!-- Result style -->
+    <style name="result_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/arimo</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/quiz_text</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+    </style>
+
+</resources>
