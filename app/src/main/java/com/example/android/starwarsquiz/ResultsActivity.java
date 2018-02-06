@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 public class ResultsActivity extends AppCompatActivity {
 
+    int playerScore;
+    String playerName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +24,9 @@ public class ResultsActivity extends AppCompatActivity {
 
         // Initializes the Reset Button which allows the Player to take the Quiz again
         Button reset = findViewById(R.id.reset_quiz);
+
+        // Initializes the Share Button which allows the Player to share their results
+        Button share = findViewById(R.id.share_result);
 
         // Initializes the Bundle which holds the data passed between Activities
         Bundle bundle = getIntent().getExtras();
@@ -36,12 +42,24 @@ public class ResultsActivity extends AppCompatActivity {
             }
         });
 
+        // Set a Click Listener on the Share Button
+        share.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, (getString(R.string.share_message, playerScore)));
+                startActivity(Intent.createChooser(shareIntent, getString(R.string.share_result, playerName, playerScore)));
+            }
+        });
+
         // Gets the data stored in the bundle and sent from the other activities: Main and Quiz
         if (bundle != null) {
             // Receives the name of the player inserted on the Main screen
-            String playerName = bundle.getString("name");
+            playerName = bundle.getString("name");
             // Receives the score of the player achieved on the Quiz screen
-            int playerScore = bundle.getInt("score");
+            playerScore = bundle.getInt("score");
             // Creates a result message for a score between 0 and 3
             StringBuilder answerYoungPadawan = new StringBuilder(getString(R.string.young_padawan, playerName, playerScore));
             // Creates the results message for a score between 4 and 7

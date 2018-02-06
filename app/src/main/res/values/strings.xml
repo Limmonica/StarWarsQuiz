@@ -81,4 +81,7 @@
     <string name="young_padawan">Not bad, %s! You scored %d points. You are a Young Padawan. The Force is strong with you, but in order to control it and become a Jedi Knight you need more training.</string>
     <string name="jedi_knight">Great, %s! You scored %d points. You are a Jedi Knight. The Force is powerful with you. Serve well and guard the peace and justice in the Galactic Republic and maybe one day you\'ll become a Jedi Master.</string>
     <string name="jedi_master">Awesome, %s! You scored %d points. You are a Jedi Master. You\'re mastering force with grace and the Jedi High Council is proud of having you. May the Force be with You!</string>
+    <string name="share">Share your result</string>
+    <string name="share_result">Congratulations, %s! You scored %d points out of 12! Share your result with your friends via:</string>
+    <string name="share_message">Hey, I have scored %d points in Star Wars game! Check out how strong is the force with you!</string>
 </resources>
