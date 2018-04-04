@@ -64,18 +64,18 @@ public class ResultsActivity extends AppCompatActivity {
             StringBuilder answerYoungPadawan = new StringBuilder(getString(R.string.young_padawan, playerName, playerScore));
             // Creates the results message for a score between 4 and 7
             StringBuilder answerJediKnight = new StringBuilder(getString(R.string.jedi_knight, playerName, playerScore));
-            // Creates the results message for a score between 8 and 12
+            // Creates the results message for a score between 8 and 10
             StringBuilder answerJediMaster = new StringBuilder(getString(R.string.jedi_master, playerName, playerScore));
-            // If the Player scored between 0 and 4
-            if (playerScore >= 0 && playerScore < 4) {
+            // If the Player scored between 0 and 3
+            if (playerScore >= 0 && playerScore <= 3) {
                 // displays the Young Padawan message
                 finalResult.setText(answerYoungPadawan);
                 // Otherwise, if the Player scored between 4 and 7
-            } else if (playerScore >= 4 && playerScore < 8) {
+            } else if (playerScore >= 4 && playerScore <= 7) {
                 // displays the Jedi Knight message
                 finalResult.setText(answerJediKnight);
-                // Otherwise, if the Player scored between 8 and 12
-            } else if (playerScore >= 8 && playerScore <= 12) {
+                // Otherwise, if the Player scored between 8 and 10
+            } else if (playerScore >= 8 && playerScore <= 10) {
                 // Displays the Jedi Master message
                 finalResult.setText(answerJediMaster);
             }

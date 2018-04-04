@@ -6,44 +6,46 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.starwarsquiz.ResultsActivity">
 
+    <!-- SUB-PARENT LAYOUT -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margins"
         android:orientation="vertical">
 
+        <!-- HEADER STAR WARS LOGO -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:contentDescription="@string/intro_text"
+            android:contentDescription="@null"
             android:src="@drawable/starwars" />
 
+        <!-- RESULT CARD VIEW -->
         <android.support.v7.widget.CardView
             style="@style/card_view"
             card_view:cardBackgroundColor="@color/colorPrimary"
             card_view:cardCornerRadius="@dimen/card_corners"
             card_view:contentPadding="@dimen/margins">
 
+            <!-- RESULT TEXT -->
             <TextView
                 android:id="@+id/results"
                 style="@style/result_style"
                 android:layout_marginBottom="@dimen/margins"
                 tools:text="results page" />
-
         </android.support.v7.widget.CardView>
 
-
+        <!-- RESET BUTTON -->
         <Button
             android:id="@+id/reset_quiz"
             style="@style/button_style"
             android:text="@string/reset" />
 
+        <!-- SHARE BUTTON -->
         <Button
             android:id="@+id/share_result"
             style="@style/button_style"
             android:text="@string/share" />
-
     </LinearLayout>
-
 </ScrollView>

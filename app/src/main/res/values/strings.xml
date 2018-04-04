@@ -5,10 +5,8 @@
     <string name="start_quiz">Start Quiz</string>
 
     <string name="question_1">1. In <i>Return of the Jedi</i>, <b>Luke Skywalker\’s</b> lightsaber was green. What color was it in the first two movies?</string>
-    <string name="answer_1_a0">Red</string>
-    <string name="answer_1_b0">Green</string>
-    <string name="answer_1_c0">Purple</string>
-    <string name="answer_1_d1">Blue</string>
+    <string name="answer_1">Red</string>
+    <string name="hint_1">Write your answer here</string>
 
     <string name="question_2">2. Which of these were <b>Darth Sidious\’ Sith</b> apprentices?</string>
     <string name="answer_2_a1">Darth Vader</string>
@@ -64,24 +62,12 @@
     <string name="answer_10_c0">Mitochondria</string>
     <string name="answer_10_d1">Midichlorians</string>
 
-    <string name="question_11">11. How old is <b>Padme Amidala</b> when she\’s elected to the position of <b>Queen of Naboo?</b></string>
-    <string name="answer_11_a0">11</string>
-    <string name="answer_11_b1">14</string>
-    <string name="answer_11_c0">106</string>
-    <string name="answer_11_d0">8</string>
-
-    <string name="question_12">12. Who was the first Jedi to learn how to return from death as a <b>Force Ghost</b>?</string>
-    <string name="answer_12_a0">Yoda</string>
-    <string name="answer_12_b0">Obi-Wan Kenobi</string>
-    <string name="answer_12_c0">Anakin Skywalker</string>
-    <string name="answer_12_d1">Qui-Gon Jinn</string>
-
     <string name="score">View Score</string>
     <string name="reset">Take Quiz Again</string>
-    <string name="young_padawan">Not bad, %s! You scored %d points. You are a Young Padawan. The Force is strong with you, but in order to control it and become a Jedi Knight you need more training.</string>
-    <string name="jedi_knight">Great, %s! You scored %d points. You are a Jedi Knight. The Force is powerful with you. Serve well and guard the peace and justice in the Galactic Republic and maybe one day you\'ll become a Jedi Master.</string>
-    <string name="jedi_master">Awesome, %s! You scored %d points. You are a Jedi Master. You\'re mastering force with grace and the Jedi High Council is proud of having you. May the Force be with You!</string>
+    <string name="young_padawan">Not bad, %s! You scored %d points out of 10. You are a Young Padawan. The Force is strong with you, but in order to control it and become a Jedi Knight you need more training.</string>
+    <string name="jedi_knight">Great, %s! You scored %d points out of 10. You are a Jedi Knight. The Force is powerful with you. Serve well and guard the peace and justice in the Galactic Republic and maybe one day you\'ll become a Jedi Master.</string>
+    <string name="jedi_master">Awesome, %s! You scored %d points out of 10. You are a Jedi Master. You\'re mastering force with grace and the Jedi High Council is proud of having you. May the Force be with You!</string>
     <string name="share">Share your result</string>
-    <string name="share_result">Congratulations, %s! You scored %d points out of 12! Share your result with your friends via:</string>
-    <string name="share_message">Hey, I have scored %d points in Star Wars game! Check out how strong is the force with you!</string>
+    <string name="share_result">Congratulations, %s! You scored %d points out of 10! Share your result with your friends via:</string>
+    <string name="share_message">Hey, I have scored %d points in Star Wars game! Check out how strong is the force with you at www.starwarsquizgame.com!</string>
 </resources>

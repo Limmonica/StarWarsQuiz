@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- SUB-PARENT LAYOUT -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,26 +16,26 @@
         android:paddingLeft="@dimen/margins"
         android:paddingRight="@dimen/margins">
 
-        <!-- Start Wars logo image -->
+        <!-- HEADER STAR WARS LOGO -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:contentDescription="@string/intro_text"
+            android:contentDescription="@null"
             android:src="@drawable/starwars" />
 
-        <!-- Title of the quiz -->
+        <!-- QUIZ TITLE -->
         <TextView
             style="@style/title_main"
             android:text="@string/intro_text" />
 
-        <!-- Player inserts their name -->
+        <!-- PLAYER NAME -->
         <EditText
             android:id="@+id/name_text_view"
             style="@style/editText_style"
             android:hint="@string/user_name" />
 
-        <!-- The button takes the player to the quiz -->
+        <!-- START QUIZ BUTTON -->
         <Button
             android:id="@+id/start_quiz"
             style="@style/button_style"

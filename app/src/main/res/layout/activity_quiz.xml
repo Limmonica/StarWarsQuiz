@@ -6,133 +6,137 @@
     android:layout_height="match_parent"
     tools:context=".QuizActivity">
 
+    <!-- SUB-PARENT LAYOUT -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margins"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:orientation="vertical">
 
+        <!-- HEADER IMAGE -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:contentDescription="@string/intro_text"
+            android:contentDescription="@null"
             android:src="@drawable/starwars" />
 
-        <!-- Question 1 -->
+        <!-- Question 1 Card -->
         <android.support.v7.widget.CardView
             style="@style/card_view"
             card_view:cardBackgroundColor="@color/colorPrimary"
             card_view:cardCornerRadius="@dimen/card_corners"
             card_view:contentPadding="@dimen/margins">
 
-            <RadioGroup
-                android:id="@+id/question1_radiogroup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/question1"
-                    style="@style/questions_style"
-                    android:text="@string/question_1" />
-
-                <RadioButton
-                    android:id="@+id/q1_a0"
-                    style="@style/answers_style"
-                    android:text="@string/answer_1_a0" />
-
-                <RadioButton
-                    android:id="@+id/q1_b0"
-                    style="@style/answers_style"
-                    android:text="@string/answer_1_b0" />
-
-                <RadioButton
-                    android:id="@+id/q1_c0"
-                    style="@style/answers_style"
-                    android:text="@string/answer_1_c0" />
-
-                <RadioButton
-                    android:id="@+id/q1_d1"
-                    style="@style/answers_style"
-                    android:text="@string/answer_1_d1" />
-            </RadioGroup>
-
-        </android.support.v7.widget.CardView>
-
-        <!-- Question 2 -->
-        <android.support.v7.widget.CardView
-            style="@style/card_view"
-            card_view:cardBackgroundColor="@color/colorPrimary"
-            card_view:cardCornerRadius="@dimen/card_corners"
-            card_view:contentPadding="@dimen/margins">
-
+            <!-- Question 1 Card Layout -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
-                <!-- QUESTION 2 -->
+                <!-- Question 1 Content -->
                 <TextView
-                    android:id="@+id/question2"
+                    android:id="@+id/question1"
                     style="@style/questions_style"
-                    android:text="@string/question_2" />
+                    android:text="@string/question_1" />
 
-                <CheckBox
-                    android:id="@+id/q2_a1"
+                <!-- Question 1 Answer -->
+                <EditText
+                    android:id="@+id/q1_a"
                     style="@style/answers_style"
-                    android:text="@string/answer_2_a1" />
-
-                <CheckBox
-                    android:id="@+id/q2_b1"
-                    style="@style/answers_style"
-                    android:text="@string/answer_2_b1" />
-
-                <CheckBox
-                    android:id="@+id/q2_c1"
-                    style="@style/answers_style"
-                    android:text="@string/answer_2_c1" />
-
-                <CheckBox
-                    android:id="@+id/q2_d0"
-                    style="@style/answers_style"
-                    android:text="@string/answer_2_d0" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_1" />
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
-        <!-- Question 3 -->
+        <!-- Question 2 Card -->
         <android.support.v7.widget.CardView
             style="@style/card_view"
             card_view:cardBackgroundColor="@color/colorPrimary"
             card_view:cardCornerRadius="@dimen/card_corners"
             card_view:contentPadding="@dimen/margins">
 
+            <!-- Question 2 Sub-Layout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Question 2 Content -->
+                <TextView
+                    android:id="@+id/question2"
+                    style="@style/questions_style"
+                    android:text="@string/question_2" />
+
+                <!-- Question 2 Answer (a) -->
+                <CheckBox
+                    android:id="@+id/q2_a1"
+                    style="@style/answers_style"
+                    android:text="@string/answer_2_a1" />
+
+                <!-- Question 2 Answer (b) -->
+                <CheckBox
+                    android:id="@+id/q2_b1"
+                    style="@style/answers_style"
+                    android:text="@string/answer_2_b1" />
+
+                <!-- Question 2 Answer (c) -->
+                <CheckBox
+                    android:id="@+id/q2_c1"
+                    style="@style/answers_style"
+                    android:text="@string/answer_2_c1" />
+
+                <!-- Question 2 Answer (d) -->
+                <CheckBox
+                    android:id="@+id/q2_d0"
+                    style="@style/answers_style"
+                    android:text="@string/answer_2_d0" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <!-- Question 3 Card -->
+        <android.support.v7.widget.CardView
+            style="@style/card_view"
+            card_view:cardBackgroundColor="@color/colorPrimary"
+            card_view:cardCornerRadius="@dimen/card_corners"
+            card_view:contentPadding="@dimen/margins">
+
+            <!-- Question 3 Radio Group -->
             <RadioGroup
                 android:id="@+id/question3_radiogroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!-- Question 3 Content -->
                 <TextView
                     android:id="@+id/question3"
                     style="@style/questions_style"
                     android:text="@string/question_3" />
 
+                <!-- Question 3 Answer (a) -->
                 <RadioButton
                     android:id="@+id/q3_a0"
                     style="@style/answers_style"
                     android:text="@string/answer_3_a0" />
 
+                <!-- Question 3 Answer (b) -->
                 <RadioButton
                     android:id="@+id/q3_b0"
                     style="@style/answers_style"
                     android:text="@string/answer_3_b0" />
 
+                <!-- Question 3 Answer (c) -->
                 <RadioButton
                     android:id="@+id/q3_c0"
                     style="@style/answers_style"
                     android:text="@string/answer_3_c0" />
 
+                <!-- Question 3 Answer (d) -->
                 <RadioButton
                     android:id="@+id/q3_d1"
                     style="@style/answers_style"
@@ -140,38 +144,44 @@
             </RadioGroup>
         </android.support.v7.widget.CardView>
 
-        <!-- Question 4 -->
+        <!-- Question 4 Card -->
         <android.support.v7.widget.CardView
             style="@style/card_view"
             card_view:cardBackgroundColor="@color/colorPrimary"
             card_view:cardCornerRadius="@dimen/card_corners"
             card_view:contentPadding="@dimen/margins">
 
+            <!-- Question 4 Radio Group -->
             <RadioGroup
                 android:id="@+id/question4_radiogroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!-- Question 4 Content -->
                 <TextView
                     android:id="@+id/question4"
                     style="@style/questions_style"
                     android:text="@string/question_4" />
 
+                <!-- Question 4 Answer (a) -->
                 <RadioButton
                     android:id="@+id/q4_a0"
                     style="@style/answers_style"
                     android:text="@string/answer_4_a0" />
 
+                <!-- Question 4 Answer (b) -->
                 <RadioButton
                     android:id="@+id/q4_b1"
                     style="@style/answers_style"
                     android:text="@string/answer_4_b1" />
 
+                <!-- Question 4 Answer (c) -->
                 <RadioButton
                     android:id="@+id/q4_c0"
                     style="@style/answers_style"
                     android:text="@string/answer_4_c0" />
 
+                <!-- Question 4 Answer (d) -->
                 <RadioButton
                     android:id="@+id/q4_d0"
                     style="@style/answers_style"
@@ -179,38 +189,44 @@
             </RadioGroup>
         </android.support.v7.widget.CardView>
 
-        <!-- Question 5 -->
+        <!-- Question 5 Card -->
         <android.support.v7.widget.CardView
             style="@style/card_view"
             card_view:cardBackgroundColor="@color/colorPrimary"
             card_view:cardCornerRadius="@dimen/card_corners"
             card_view:contentPadding="@dimen/margins">
 
+            <!-- Question 5 Radio Group -->
             <RadioGroup
                 android:id="@+id/question5_radiogroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!-- Question 5 Content -->
                 <TextView
                     android:id="@+id/question5"
                     style="@style/questions_style"
                     android:text="@string/question_5" />
 
+                <!-- Question 5 Answer (a) -->
                 <RadioButton
                     android:id="@+id/q5_a0"
                     style="@style/answers_style"
                     android:text="@string/answer_5_a0" />
 
+                <!-- Question 5 Answer (b) -->
                 <RadioButton
                     android:id="@+id/q5_b0"
                     style="@style/answers_style"
                     android:text="@string/answer_5_b0" />
 
+                <!-- Question 5 Answer (c) -->
                 <RadioButton
                     android:id="@+id/q5_c0"
                     style="@style/answers_style"
                     android:text="@string/answer_5_c0" />
 
+                <!-- Question 5 Answer (d) -->
                 <RadioButton
                     android:id="@+id/q5_d1"
                     style="@style/answers_style"
@@ -218,38 +234,44 @@
             </RadioGroup>
         </android.support.v7.widget.CardView>
 
-        <!-- Question 6 -->
+        <!-- Question 6 Card -->
         <android.support.v7.widget.CardView
             style="@style/card_view"
             card_view:cardBackgroundColor="@color/colorPrimary"
             card_view:cardCornerRadius="@dimen/card_corners"
             card_view:contentPadding="@dimen/margins">
 
+            <!-- Question 6 Radio Group -->
             <RadioGroup
                 android:id="@+id/question6_radiogroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!-- Question 6 Content -->
                 <TextView
                     android:id="@+id/question6"
                     style="@style/questions_style"
                     android:text="@string/question_6" />
 
+                <!-- Question 6 Answer (a) -->
                 <RadioButton
                     android:id="@+id/q6_a1"
                     style="@style/answers_style"
                     android:text="@string/answer_6_a1" />
 
+                <!-- Question 6 Answer (b) -->
                 <RadioButton
                     android:id="@+id/q6_b0"
                     style="@style/answers_style"
                     android:text="@string/answer_6_b0" />
 
+                <!-- Question 6 Answer (c) -->
                 <RadioButton
                     android:id="@+id/q6_c0"
                     style="@style/answers_style"
                     android:text="@string/answer_6_c0" />
 
+                <!-- Question 6 Answer (d) -->
                 <RadioButton
                     android:id="@+id/q6_d0"
                     style="@style/answers_style"
@@ -257,38 +279,44 @@
             </RadioGroup>
         </android.support.v7.widget.CardView>
 
-        <!-- Question 7 -->
+        <!-- Question 7 Card -->
         <android.support.v7.widget.CardView
             style="@style/card_view"
             card_view:cardBackgroundColor="@color/colorPrimary"
             card_view:cardCornerRadius="@dimen/card_corners"
             card_view:contentPadding="@dimen/margins">
 
+            <!-- Question 7 Radio Group -->
             <RadioGroup
                 android:id="@+id/question7_radiogroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!-- Question 7 Content -->
                 <TextView
                     android:id="@+id/question7"
                     style="@style/questions_style"
                     android:text="@string/question_7" />
 
+                <!-- Question 7 Answer (a) -->
                 <RadioButton
                     android:id="@+id/q7_a1"
                     style="@style/answers_style"
                     android:text="@string/answer_7_a1" />
 
+                <!-- Question 7 Answer (b) -->
                 <RadioButton
                     android:id="@+id/q7_b0"
                     style="@style/answers_style"
                     android:text="@string/answer_7_b0" />
 
+                <!-- Question 7 Answer (c) -->
                 <RadioButton
                     android:id="@+id/q7_c0"
                     style="@style/answers_style"
                     android:text="@string/answer_7_c0" />
 
+                <!-- Question 7 Answer (d) -->
                 <RadioButton
                     android:id="@+id/q7_d0"
                     style="@style/answers_style"
@@ -296,38 +324,44 @@
             </RadioGroup>
         </android.support.v7.widget.CardView>
 
-        <!-- Question 8 -->
+        <!-- Question 8 Card -->
         <android.support.v7.widget.CardView
             style="@style/card_view"
             card_view:cardBackgroundColor="@color/colorPrimary"
             card_view:cardCornerRadius="@dimen/card_corners"
             card_view:contentPadding="@dimen/margins">
 
+            <!-- Question 8 Radio Group -->
             <RadioGroup
                 android:id="@+id/question8_radiogroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!-- Question 8 Content -->
                 <TextView
                     android:id="@+id/question8"
                     style="@style/questions_style"
                     android:text="@string/question_8" />
 
+                <!-- Question 8 Answer (a) -->
                 <RadioButton
                     android:id="@+id/q8_a0"
                     style="@style/answers_style"
                     android:text="@string/answer_8_a0" />
 
+                <!-- Question 8 Answer (b) -->
                 <RadioButton
                     android:id="@+id/q8_b0"
                     style="@style/answers_style"
                     android:text="@string/answer_8_b0" />
 
+                <!-- Question 8 Answer (c) -->
                 <RadioButton
                     android:id="@+id/q8_c0"
                     style="@style/answers_style"
                     android:text="@string/answer_8_c0" />
 
+                <!-- Question 8 Answer (d) -->
                 <RadioButton
                     android:id="@+id/q8_d1"
                     style="@style/answers_style"
@@ -335,38 +369,44 @@
             </RadioGroup>
         </android.support.v7.widget.CardView>
 
-        <!-- Question 9 -->
+        <!-- Question 9 Card -->
         <android.support.v7.widget.CardView
             style="@style/card_view"
             card_view:cardBackgroundColor="@color/colorPrimary"
             card_view:cardCornerRadius="@dimen/card_corners"
             card_view:contentPadding="@dimen/margins">
 
+            <!-- Question 9 Radio Group -->
             <RadioGroup
                 android:id="@+id/question9_radiogroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!-- Question 9 Content -->
                 <TextView
                     android:id="@+id/question9"
                     style="@style/questions_style"
                     android:text="@string/question_9" />
 
+                <!-- Question 9 Answer (a) -->
                 <RadioButton
                     android:id="@+id/q9_a0"
                     style="@style/answers_style"
                     android:text="@string/answer_9_a0" />
 
+                <!-- Question 9 Answer (b) -->
                 <RadioButton
                     android:id="@+id/q9_b1"
                     style="@style/answers_style"
                     android:text="@string/answer_9_b1" />
 
+                <!-- Question 9 Answer (c) -->
                 <RadioButton
                     android:id="@+id/q9_c0"
                     style="@style/answers_style"
                     android:text="@string/answer_9_c0" />
 
+                <!-- Question 9 Answer (d) -->
                 <RadioButton
                     android:id="@+id/q9_d0"
                     style="@style/answers_style"
@@ -374,38 +414,44 @@
             </RadioGroup>
         </android.support.v7.widget.CardView>
 
-        <!-- Question 10 -->
+        <!-- Question 10 Card -->
         <android.support.v7.widget.CardView
             style="@style/card_view"
             card_view:cardBackgroundColor="@color/colorPrimary"
             card_view:cardCornerRadius="@dimen/card_corners"
             card_view:contentPadding="@dimen/margins">
 
+            <!-- Question 10 Radio Group -->
             <RadioGroup
                 android:id="@+id/question10_radiogroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!-- Question 10 Content -->
                 <TextView
                     android:id="@+id/question10"
                     style="@style/questions_style"
                     android:text="@string/question_10" />
 
+                <!-- Question 10 Answer (a) -->
                 <RadioButton
                     android:id="@+id/q10_a0"
                     style="@style/answers_style"
                     android:text="@string/answer_10_a0" />
 
+                <!-- Question 10 Answer (b) -->
                 <RadioButton
                     android:id="@+id/q10_b0"
                     style="@style/answers_style"
                     android:text="@string/answer_10_b0" />
 
+                <!-- Question 10 Answer (c) -->
                 <RadioButton
                     android:id="@+id/q10_c0"
                     style="@style/answers_style"
                     android:text="@string/answer_10_c0" />
 
+                <!-- Question 10 Answer (d) -->
                 <RadioButton
                     android:id="@+id/q10_d1"
                     style="@style/answers_style"
@@ -413,89 +459,10 @@
             </RadioGroup>
         </android.support.v7.widget.CardView>
 
-        <!-- Question 11 -->
-        <android.support.v7.widget.CardView
-            style="@style/card_view"
-            card_view:cardBackgroundColor="@color/colorPrimary"
-            card_view:cardCornerRadius="@dimen/card_corners"
-            card_view:contentPadding="@dimen/margins">
-
-            <RadioGroup
-                android:id="@+id/question11_radiogroup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/question11"
-                    style="@style/questions_style"
-                    android:text="@string/question_11" />
-
-                <RadioButton
-                    android:id="@+id/q11_a0"
-                    style="@style/answers_style"
-                    android:text="@string/answer_11_a0" />
-
-                <RadioButton
-                    android:id="@+id/q11_b1"
-                    style="@style/answers_style"
-                    android:text="@string/answer_11_b1" />
-
-                <RadioButton
-                    android:id="@+id/q11_c0"
-                    style="@style/answers_style"
-                    android:text="@string/answer_11_c0" />
-
-                <RadioButton
-                    android:id="@+id/q11_d0"
-                    style="@style/answers_style"
-                    android:text="@string/answer_11_d0" />
-            </RadioGroup>
-        </android.support.v7.widget.CardView>
-
-        <!-- Question 12 -->
-        <android.support.v7.widget.CardView
-            style="@style/card_view"
-            card_view:cardBackgroundColor="@color/colorPrimary"
-            card_view:cardCornerRadius="@dimen/card_corners"
-            card_view:contentPadding="@dimen/margins">
-
-            <RadioGroup
-                android:id="@+id/question12_radiogroup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/question12"
-                    style="@style/questions_style"
-                    android:text="@string/question_12" />
-
-                <RadioButton
-                    android:id="@+id/q12_a0"
-                    style="@style/answers_style"
-                    android:text="@string/answer_12_a0" />
-
-                <RadioButton
-                    android:id="@+id/q12_b0"
-                    style="@style/answers_style"
-                    android:text="@string/answer_12_b0" />
-
-                <RadioButton
-                    android:id="@+id/q12_c0"
-                    style="@style/answers_style"
-                    android:text="@string/answer_12_c0" />
-
-                <RadioButton
-                    android:id="@+id/q12_d1"
-                    style="@style/answers_style"
-                    android:text="@string/answer_12_d1" />
-            </RadioGroup>
-        </android.support.v7.widget.CardView>
-
+        <!-- Submit button to view score -->
         <Button
             android:id="@+id/view_score"
             style="@style/button_style"
             android:text="@string/score" />
-
     </LinearLayout>
-
 </ScrollView>
