@@ -39,6 +39,8 @@
         <Button
             android:id="@+id/start_quiz"
             style="@style/button_style"
+            android:clickable="true"
+            android:focusable="true"
             android:text="@string/start_quiz" />
     </LinearLayout>
 </ScrollView>

@@ -8,9 +8,17 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * This activity displays the name and the score of the player
+ * It allows to reset the quiz and take it again
+ * It allows to share the results in other apps
+ */
+
 public class ResultsActivity extends AppCompatActivity {
 
+    // Tracks the score of the user
     int playerScore;
+    // Tracks the name of the user
     String playerName;
 
     @Override

@@ -13,13 +13,23 @@ import android.widget.EditText;
 
 /**
  * This app displays a quiz about the Star Wars movies
+ * It keeps the View Score button disabled until the player
+ * answered all questions
  * It calculates and reports the final score of the player
  * It resets and allows for a new game
+ * It allows to share the result of the game in other apps
+ * This activity shows the intro screen to the user where
+ * they have to type their name and press the button Start Quiz
+ * in order to startQuiz answering the questions
+ * It keeps the button Start Quiz disabled until the user has typed
+ * their name
+ * It passes the name of the user to the Results Activity
  */
 public class MainActivity extends AppCompatActivity {
 
     // Tracks the EditText where the Player writes their name
     EditText name;
+    Button startQuiz;
 
     /**
      * This method hides the keyboard when clicking outside the EditText area
@@ -65,11 +75,10 @@ public class MainActivity extends AppCompatActivity {
         name = findViewById(R.id.name_text_view);
 
         // Initializes the Button view to Start the Quiz
-        Button start = findViewById(R.id.start_quiz);
+        startQuiz = findViewById(R.id.start_quiz);
 
         // Set a click listener on that View
-        start.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the button View is clicked
+        startQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Creates intent to pass data and send Player to the Quiz screen

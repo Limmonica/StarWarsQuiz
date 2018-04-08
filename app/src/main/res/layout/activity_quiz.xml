@@ -49,6 +49,9 @@
                     style="@style/answers_style"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapSentences"
+                    android:singleLine="true"
                     android:hint="@string/hint_1" />
             </LinearLayout>
 
@@ -463,6 +466,8 @@
         <Button
             android:id="@+id/view_score"
             style="@style/button_style"
+            android:clickable="false"
+            android:focusable="true"
             android:text="@string/score" />
     </LinearLayout>
 </ScrollView>
