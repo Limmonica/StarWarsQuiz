@@ -2,6 +2,7 @@
     <string name="app_name">StarWarsQuiz</string>
     <string name="intro_text">QUIZ: How strong is the Force with you?</string>
     <string name="user_name">Enter your name here</string>
+    <string name="default_name">Han Solo</string>
     <string name="start_quiz">Start Quiz</string>
 
     <string name="question_1">1. In <i>Return of the Jedi</i>, <b>Luke Skywalker\’s</b> lightsaber was green. What color was it in the first two movies?</string>

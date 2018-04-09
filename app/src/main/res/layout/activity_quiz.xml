@@ -49,10 +49,10 @@
                     style="@style/answers_style"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="@string/hint_1"
                     android:imeOptions="actionDone"
                     android:inputType="textCapSentences"
-                    android:singleLine="true"
-                    android:hint="@string/hint_1" />
+                    android:singleLine="true" />
             </LinearLayout>
 
         </android.support.v7.widget.CardView>

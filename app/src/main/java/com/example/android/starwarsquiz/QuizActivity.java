@@ -132,7 +132,6 @@ public class QuizActivity extends AppCompatActivity {
         radioGroupQ9 = findViewById(R.id.question9_radiogroup);
         radioGroupQ10 = findViewById(R.id.question10_radiogroup);
 
-
         //Adds an event listener to the EditText field
         answer1.addTextChangedListener(new TextWatcher() {
             @Override
@@ -319,7 +318,6 @@ public class QuizActivity extends AppCompatActivity {
                 startActivity(resultIntent);
             }
         });
-
     }
 
     /**
@@ -328,29 +326,28 @@ public class QuizActivity extends AppCompatActivity {
      *
      * @return isAnswered - tells the events listener if the questions were answered or not
      */
-
     private boolean checkAllAnswers() {
         // Check Question 1
         String userAnswer = answer1.getText().toString();
         this.isAnswered = userAnswer.length() != 0;
         // Check Question 2
-        this.isAnswered = answer2a.isChecked() || answer2b.isChecked() || answer2c.isChecked() || answer2d.isChecked();
+        this.isAnswered = isAnswered && (answer2a.isChecked() || answer2b.isChecked() || answer2c.isChecked() || answer2d.isChecked());
         // Check Question 3
-        this.isAnswered = radioGroupQ3.getCheckedRadioButtonId() != -1;
+        this.isAnswered = isAnswered && radioGroupQ3.getCheckedRadioButtonId() != -1;
         // Check Question 4
-        this.isAnswered = radioGroupQ4.getCheckedRadioButtonId() != -1;
+        this.isAnswered = isAnswered && radioGroupQ4.getCheckedRadioButtonId() != -1;
         // Check Question 5
-        this.isAnswered = radioGroupQ5.getCheckedRadioButtonId() != -1;
+        this.isAnswered = isAnswered && radioGroupQ5.getCheckedRadioButtonId() != -1;
         // Check Question 6
-        this.isAnswered = radioGroupQ6.getCheckedRadioButtonId() != -1;
+        this.isAnswered = isAnswered && radioGroupQ6.getCheckedRadioButtonId() != -1;
         // Check Question 7
-        this.isAnswered = radioGroupQ7.getCheckedRadioButtonId() != -1;
+        this.isAnswered = isAnswered && radioGroupQ7.getCheckedRadioButtonId() != -1;
         // Check Question 8
-        this.isAnswered = radioGroupQ8.getCheckedRadioButtonId() != -1;
+        this.isAnswered = isAnswered && radioGroupQ8.getCheckedRadioButtonId() != -1;
         // Check Question 9
-        this.isAnswered = radioGroupQ9.getCheckedRadioButtonId() != -1;
+        this.isAnswered = isAnswered && radioGroupQ9.getCheckedRadioButtonId() != -1;
         // Check Question 10
-        this.isAnswered = radioGroupQ10.getCheckedRadioButtonId() != -1;
+        this.isAnswered = isAnswered && radioGroupQ10.getCheckedRadioButtonId() != -1;
         return isAnswered;
     }
 }

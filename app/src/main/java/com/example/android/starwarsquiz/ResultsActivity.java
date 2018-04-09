@@ -39,7 +39,7 @@ public class ResultsActivity extends AppCompatActivity {
         // Initializes the Bundle which holds the data passed between Activities
         Bundle bundle = getIntent().getExtras();
 
-        // Set a Click Listener on the Reset Button
+        // Sets a Click Listener on the Reset Button
         reset.setOnClickListener(new OnClickListener() {
             // The code in this method will be executed when the reset button is clicked
             @Override
@@ -50,7 +50,7 @@ public class ResultsActivity extends AppCompatActivity {
             }
         });
 
-        // Set a Click Listener on the Share Button
+        // Sets a Click Listener on the Share Button
         share.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

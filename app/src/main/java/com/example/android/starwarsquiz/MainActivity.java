@@ -27,8 +27,9 @@ import android.widget.EditText;
  */
 public class MainActivity extends AppCompatActivity {
 
-    // Tracks the EditText where the Player writes their name
+    // Tracks the EditText where the user writes their name
     EditText name;
+    // Tracks the Button which starts the quiz
     Button startQuiz;
 
     /**
@@ -81,8 +82,16 @@ public class MainActivity extends AppCompatActivity {
         startQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Gets the text that the user has filled in the EditText
+                String userName = name.getText().toString();
+
+                // If the user hasn't written any name, then use the default user name
+                if (userName.equals("")) name.setText(getString(R.string.default_name));
+
                 // Creates intent to pass data and send Player to the Quiz screen
                 Intent startIntent = new Intent(MainActivity.this, QuizActivity.class);
+
                 // Sends the Player name to the Quiz screen
                 startIntent.putExtra("name", name.getText().toString());
                 startActivity(startIntent);
@@ -90,4 +99,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
