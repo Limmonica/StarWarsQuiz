@@ -26,10 +26,8 @@ import android.widget.Toast;
  */
 public class QuizActivity extends AppCompatActivity {
 
-    // Tracks the name of the player
-    String playerName;
-    // Tracks the player's score
-    int score;
+    // Tracks the name of the user
+    String userName;
     // Tracks the answer to the EditText type question
     EditText answer1;
     // Tracks all the answers to the Checkbox type question
@@ -106,7 +104,7 @@ public class QuizActivity extends AppCompatActivity {
         // Gets the data stored in the bundle and sent from Main Activity
         if (bundle != null) {
             // Gets the name of the player
-            playerName = bundle.getString("name");
+            userName = bundle.getString("name");
         }
 
         // Initializes the view of the answer to the EditText type question
@@ -200,7 +198,8 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+                else
+                    result.setClickable(false);
             }
         });
 
@@ -288,15 +287,58 @@ public class QuizActivity extends AppCompatActivity {
 //
                 // If all the questions have been answered
                 if (checkAllAnswers()) {
+                    int score = 0;
 
                     // Set the button clickable
                     result.setClickable(true);
 
                     // Calculate the user's score
-                    calculateScore();
+                    // Correct answers for the question 1 to compare against the user input
+                    String correctAnswer = getString(R.string.answer_1);
+
+                    // Gets the typed answer of the user
+                    String userAnswer = answer1.getText().toString().trim();
+
+                    // If the typed answer is right
+                    if (correctAnswer.equalsIgnoreCase(userAnswer))
+                        // Increase score by 1
+                        score++;
+
+                    // If the checked boxes are a, b, c and not d
+                    if (answer2a.isChecked() && answer2b.isChecked() && answer2c.isChecked() && !answer2d.isChecked())
+                        // Increase score by 1
+                        score++;
+
+                    // If the selected the right answers increase score by 1
+                    if (answer3.isChecked()) score++;
+                    if (answer4.isChecked()) score++;
+                    if (answer5.isChecked()) score++;
+                    if (answer6.isChecked()) score++;
+                    if (answer7.isChecked()) score++;
+                    if (answer8.isChecked()) score++;
+                    if (answer9.isChecked()) score++;
+                    if (answer10.isChecked()) score++;
 
                     // Show the user a toast message with the results
-                    resultsMessage();
+                    // Creates a result message for a score between 0 and 3
+                    StringBuilder answerYoungPadawan = new StringBuilder(getString(R.string.young_padawan, userName, score));
+                    // Creates the results message for a score between 4 and 7
+                    StringBuilder answerJediKnight = new StringBuilder(getString(R.string.jedi_knight, userName, score));
+                    // Creates the results message for a score between 8 and 10
+                    StringBuilder answerJediMaster = new StringBuilder(getString(R.string.jedi_master, userName, score));
+
+                    if (score >= 0 && score <= 3) {
+                        // Toasts the Young Padawan message
+                        Toast.makeText(QuizActivity.this, answerYoungPadawan, Toast.LENGTH_LONG).show();
+                        // Otherwise, if the Player scored between 4 and 7
+                    } else if (score >= 4 && score <= 7) {
+                        // Toasts the Jedi Knight message
+                        Toast.makeText(QuizActivity.this, answerJediKnight, Toast.LENGTH_LONG).show();
+                        // Otherwise, if the Player scored between 8 and 10
+                    } else if (score >= 8 && score <= 10) {
+                        // Displays the Jedi Master message
+                        Toast.makeText(QuizActivity.this, answerJediMaster, Toast.LENGTH_LONG).show();
+                    }
 
                     // Creates intent to pass data and send the user to the Results screen when the button View Score is clicked
                     Intent resultIntent = new Intent(QuizActivity.this, ResultsActivity.class);
@@ -305,7 +347,7 @@ public class QuizActivity extends AppCompatActivity {
                     resultIntent.putExtra("score", score);
 
                     // Sends the user name to the Results screen
-                    resultIntent.putExtra("name", playerName);
+                    resultIntent.putExtra("name", userName);
                     startActivity(resultIntent);
 
                 } else {
@@ -313,7 +355,8 @@ public class QuizActivity extends AppCompatActivity {
                     // Set the button not clickable
                     result.setClickable(false);
                     // Display a message that asks the user to answer all questions
-                    warningMessage();
+                    StringBuilder warning = new StringBuilder(getString(R.string.warning_message, userName));
+                    Toast.makeText(QuizActivity.this, warning, Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -348,62 +391,5 @@ public class QuizActivity extends AppCompatActivity {
         // Check Question 10
         this.isAnswered = isAnswered && radioGroupQ10.getCheckedRadioButtonId() != -1;
         return isAnswered;
-    }
-
-    private void resultsMessage() {
-
-        // Creates a result message for a score between 0 and 3
-        StringBuilder answerYoungPadawan = new StringBuilder(getString(R.string.young_padawan, playerName, score));
-        // Creates the results message for a score between 4 and 7
-        StringBuilder answerJediKnight = new StringBuilder(getString(R.string.jedi_knight, playerName, score));
-        // Creates the results message for a score between 8 and 10
-        StringBuilder answerJediMaster = new StringBuilder(getString(R.string.jedi_master, playerName, score));
-
-        if (score >= 0 && score <= 3) {
-            // Toasts the Young Padawan message
-            Toast.makeText(QuizActivity.this, answerYoungPadawan, Toast.LENGTH_LONG).show();
-            // Otherwise, if the Player scored between 4 and 7
-        } else if (score >= 4 && score <= 7) {
-            // Toasts the Jedi Knight message
-            Toast.makeText(QuizActivity.this, answerJediKnight, Toast.LENGTH_LONG).show();
-            // Otherwise, if the Player scored between 8 and 10
-        } else if (score >= 8 && score <= 10) {
-            // Displays the Jedi Master message
-            Toast.makeText(QuizActivity.this, answerJediMaster, Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private void warningMessage() {
-        StringBuilder warning = new StringBuilder(getString(R.string.warning_message, playerName));
-        Toast.makeText(QuizActivity.this, warning, Toast.LENGTH_LONG).show();
-    }
-
-    private void calculateScore() {
-
-        // Correct answers for the question 1 to compare against the user input
-        String correctAnswer = getString(R.string.answer_1);
-
-        // Gets the typed answer of the user
-        String userAnswer = answer1.getText().toString().trim();
-
-        // If the typed answer is right
-        if (correctAnswer.equalsIgnoreCase(userAnswer))
-            // Increase score by 1
-            score++;
-
-        // If the checked boxes are a, b, c and not d
-        if (answer2a.isChecked() && answer2b.isChecked() && answer2c.isChecked() && !answer2d.isChecked())
-            // Increase score by 1
-            score++;
-
-        // If the selected the right answers increase score by 1
-        if (answer3.isChecked()) score++;
-        if (answer4.isChecked()) score++;
-        if (answer5.isChecked()) score++;
-        if (answer6.isChecked()) score++;
-        if (answer7.isChecked()) score++;
-        if (answer8.isChecked()) score++;
-        if (answer9.isChecked()) score++;
-        if (answer10.isChecked()) score++;
     }
 }
