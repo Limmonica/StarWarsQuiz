@@ -20,6 +20,7 @@ public class ResultsActivity extends AppCompatActivity {
     int playerScore;
     // Tracks the name of the user
     String playerName;
+    TextView finalResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class ResultsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_results);
 
         // Initializes the TextView where the Result will be displayed
-        TextView finalResult = findViewById(R.id.results);
+        finalResult = findViewById(R.id.results);
 
         // Initializes the Reset Button which allows the Player to take the Quiz again
         Button reset = findViewById(R.id.reset_quiz);

@@ -71,4 +71,5 @@
     <string name="share">Share your result</string>
     <string name="share_result">Congratulations, %s! You scored %d points out of 10! Share your result with your friends via:</string>
     <string name="share_message">Hey, I have scored %d points in Star Wars game! Check out how strong is the force with you at www.starwarsquizgame.com!</string>
+    <string name="warning_message">Dear %s, in order for you to see your result you\'ll have  answer all the questions of the quiz"</string>
 </resources>

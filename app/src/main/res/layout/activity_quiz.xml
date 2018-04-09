@@ -467,7 +467,7 @@
             android:id="@+id/view_score"
             style="@style/button_style"
             android:clickable="false"
-            android:focusable="true"
+            android:focusable="false"
             android:text="@string/score" />
     </LinearLayout>
 </ScrollView>
