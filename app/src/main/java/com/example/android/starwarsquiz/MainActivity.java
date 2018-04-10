@@ -12,18 +12,14 @@ import android.widget.Button;
 import android.widget.EditText;
 
 /**
- * This app displays a quiz about the Star Wars movies
- * It keeps the View Score button disabled until the player
- * answered all questions
- * It calculates and reports the final score of the player
- * It resets and allows for a new game
- * It allows to share the result of the game in other apps
- * This activity shows the intro screen to the user where
- * they have to type their name and press the button Start Quiz
- * in order to startQuiz answering the questions
- * It keeps the button Start Quiz disabled until the user has typed
- * their name
- * It passes the name of the user to the Results Activity
+ * <h1>Stars Wars Quiz</h1>
+ * This Star Wars Quiz implements a quiz with questions from
+ * the Star Wars movies, calculates the score and displays it
+ * to the user
+ *
+ * @author Monica Muntean
+ * @version 1.0
+ * @since 10.04.2018
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -33,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Button startQuiz;
 
     /**
-     * This method hides the keyboard when clicking outside the EditText area
-     * Needs the parent view to be made clickable and focusable
+     * This method hides the soft keyboard
      */
     public static void hideKeyboard(Activity activity) {
         if (activity != null && activity.getWindow() != null && activity.getWindow().getDecorView() != null) {
@@ -46,8 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method is called when clicking outside the EditText area
-     * and hides the keyboard
+     * This method is called when clicking outside the EditText area and hides the keyboard
      */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {

@@ -18,12 +18,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-/**
- * This activity tracks the answers of the user in order to
- * activate the button View Score, once all questions have been
- * answered, calculate the score of the user and pass it to the
- * next screen.
- */
 public class QuizActivity extends AppCompatActivity {
 
     // Tracks the name of the user
@@ -59,8 +53,7 @@ public class QuizActivity extends AppCompatActivity {
     boolean isAnswered;
 
     /**
-     * This method hides the keyboard when clicking outside the EditText area
-     * Needs the parent view to be made clickable and focusable
+     * This method hides the soft keyboard
      */
     public static void hideKeyboard(Activity activity) {
         if (activity != null && activity.getWindow() != null && activity.getWindow().getDecorView() != null) {
@@ -72,8 +65,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     /**
-     * This method is called when clicking outside the EditText area
-     * and hides the keyboard
+     * This method is called when clicking outside the EditText area and hides the keyboard
      */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
@@ -356,9 +348,10 @@ public class QuizActivity extends AppCompatActivity {
                     result.setClickable(false);
                     // Display a message that asks the user to answer all questions
                     StringBuilder warning = new StringBuilder(getString(R.string.warning_message, userName));
+                    // Show Toast message asking the user to answer all questions
                     Toast.makeText(QuizActivity.this, warning, Toast.LENGTH_LONG).show();
                 }
-            }
+                }
         });
     }
 
