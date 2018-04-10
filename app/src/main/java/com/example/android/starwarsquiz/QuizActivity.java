@@ -268,8 +268,6 @@ public class QuizActivity extends AppCompatActivity {
         result = findViewById(R.id.view_score);
         // Set the button disabled
         result.setClickable(false);
-        // Set the button clickable
-//        result.setClickable(true);
 
         // Set a click listener on the View Score button View and calculates score
         result.setOnClickListener(new View.OnClickListener() {
