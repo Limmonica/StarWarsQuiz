@@ -140,7 +140,7 @@ public class QuizActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
@@ -150,7 +150,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
@@ -160,7 +160,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
@@ -170,7 +170,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
@@ -180,7 +180,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
@@ -190,8 +190,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else
-                    result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
@@ -201,7 +200,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
@@ -211,7 +210,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
@@ -221,7 +220,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
@@ -231,7 +230,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
@@ -241,7 +240,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
@@ -251,7 +250,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
@@ -261,7 +260,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-                else result.setClickable(false);
+//                else result.setClickable(false);
             }
         });
 
