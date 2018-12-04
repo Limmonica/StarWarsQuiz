@@ -16,7 +16,7 @@ Design a quiz layout and implement it in an app.
 * The app gracefully handles displaying all the content on screen when rotated. Either by updating the layout, adding a scrollable feature or some other mechanism that adheres to Android development guidelines.
 
 ## Optional:
-* Created 3 activities to manage the start of the quiz, the questions and the results;
+* Practiced with multiple activities and intents to manage the start of the quiz, the questions and the results;
 * Handled the empty name on the start screen;
 * Handled the unanswered questions by displaying a Toast Message which asked the user to complete answering all the questions
 * Score displayed on a Results screen and with a Toast Message.
