@@ -31,9 +31,11 @@
 
         <!-- PLAYER NAME -->
         <EditText
+            android:hint="@string/user_name"
             android:id="@+id/name_text_view"
             style="@style/editText_style"
-            android:hint="@string/user_name" />
+            android:importantForAutofill="no"
+            tools:targetApi="o" />
 
         <!-- START QUIZ BUTTON -->
         <Button
