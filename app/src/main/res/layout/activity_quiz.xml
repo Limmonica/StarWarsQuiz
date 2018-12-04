@@ -51,8 +51,10 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_1"
                     android:imeOptions="actionDone"
+                    android:importantForAutofill="no"
                     android:inputType="textCapSentences"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    tools:targetApi="o" />
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
