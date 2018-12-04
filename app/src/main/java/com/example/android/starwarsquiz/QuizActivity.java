@@ -56,7 +56,7 @@ public class QuizActivity extends AppCompatActivity {
      * This method hides the soft keyboard
      */
     public static void hideKeyboard(Activity activity) {
-        if (activity != null && activity.getWindow() != null && activity.getWindow().getDecorView() != null) {
+        if (activity != null && activity.getWindow() != null) {
             InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
             if (imm != null) {
                 imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);
@@ -139,7 +139,6 @@ public class QuizActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -149,7 +148,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -159,7 +157,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -169,7 +166,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -179,7 +175,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -189,7 +184,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -199,7 +193,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -209,7 +202,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -219,7 +211,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -229,7 +220,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -239,7 +229,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -249,7 +238,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -259,7 +247,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // If the user has answered all questions, enable View Score button
                 if (checkAllAnswers()) result.setClickable(true);
-//                else result.setClickable(false);
             }
         });
 
@@ -267,16 +254,30 @@ public class QuizActivity extends AppCompatActivity {
         result = findViewById(R.id.view_score);
         // Set the button disabled
         result.setClickable(false);
-        // Set the button clickable
-//        result.setClickable(true);
 
         // Set a click listener on the View Score button View and calculates score
         result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//
+
+                // Track if the user has not answered to all questions
+                boolean buttonOff = !checkAllAnswers();
+
+                // While the user has not answered to all questions, each time the user presses
+                // View Score button, show a toast message
+                while (buttonOff) {
+                    // Create a message for the user
+                    StringBuilder warning = new StringBuilder(getString(R.string.warning_message, userName));
+                    // Show Toast message asking the user to answer all questions
+                    Toast.makeText(QuizActivity.this, warning, Toast.LENGTH_SHORT).show();
+                    // Check if the user has answered to all questions
+                    buttonOff = checkAllAnswers();
+                }
+
                 // If all the questions have been answered
                 if (checkAllAnswers()) {
+
+                    // Track the user's score
                     int score = 0;
 
                     // Set the button clickable
@@ -299,7 +300,7 @@ public class QuizActivity extends AppCompatActivity {
                         // Increase score by 1
                         score++;
 
-                    // If the selected the right answers increase score by 1
+                    // If selected the right answers, increase score by 1
                     if (answer3.isChecked()) score++;
                     if (answer4.isChecked()) score++;
                     if (answer5.isChecked()) score++;
@@ -310,46 +311,35 @@ public class QuizActivity extends AppCompatActivity {
                     if (answer10.isChecked()) score++;
 
                     // Show the user a toast message with the results
-                    // Creates a result message for a score between 0 and 3
+                    // Create a result message for a score between 0 and 3
                     StringBuilder answerYoungPadawan = new StringBuilder(getString(R.string.young_padawan, userName, score));
-                    // Creates the results message for a score between 4 and 7
+                    // Create the results message for a score between 4 and 7
                     StringBuilder answerJediKnight = new StringBuilder(getString(R.string.jedi_knight, userName, score));
-                    // Creates the results message for a score between 8 and 10
+                    // Create the results message for a score between 8 and 10
                     StringBuilder answerJediMaster = new StringBuilder(getString(R.string.jedi_master, userName, score));
-
+                    // if the user scores between 0 and 3
                     if (score >= 0 && score <= 3) {
-                        // Toasts the Young Padawan message
+                        // Toast the Young Padawan message
                         Toast.makeText(QuizActivity.this, answerYoungPadawan, Toast.LENGTH_LONG).show();
-                        // Otherwise, if the Player scored between 4 and 7
+                        // If the user scored between 4 and 7
                     } else if (score >= 4 && score <= 7) {
-                        // Toasts the Jedi Knight message
+                        // Toast the Jedi Knight message
                         Toast.makeText(QuizActivity.this, answerJediKnight, Toast.LENGTH_LONG).show();
-                        // Otherwise, if the Player scored between 8 and 10
+                        // If the user scored between 8 and 10
                     } else if (score >= 8 && score <= 10) {
-                        // Displays the Jedi Master message
+                        // Display the Jedi Master message
                         Toast.makeText(QuizActivity.this, answerJediMaster, Toast.LENGTH_LONG).show();
                     }
 
-                    // Creates intent to pass data and send the user to the Results screen when the button View Score is clicked
+                    // Create intent to pass data when the button View Score is clicked
                     Intent resultIntent = new Intent(QuizActivity.this, ResultsActivity.class);
-
-                    // Sends the user score to the Results screen
+                    // Send the user score to the Results screen
                     resultIntent.putExtra("score", score);
-
-                    // Sends the user name to the Results screen
+                    // Send the user name to the Results screen
                     resultIntent.putExtra("name", userName);
                     startActivity(resultIntent);
-
-                } else {
-
-                    // Set the button not clickable
-                    result.setClickable(false);
-                    // Display a message that asks the user to answer all questions
-                    StringBuilder warning = new StringBuilder(getString(R.string.warning_message, userName));
-                    // Show Toast message asking the user to answer all questions
-                    Toast.makeText(QuizActivity.this, warning, Toast.LENGTH_LONG).show();
                 }
-                }
+            }
         });
     }
 

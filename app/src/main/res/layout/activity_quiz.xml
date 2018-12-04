@@ -45,6 +45,7 @@
 
                 <!-- Question 1 Answer -->
                 <EditText
+                    android:importantForAutofill="no"
                     android:id="@+id/q1_a"
                     style="@style/answers_style"
                     android:layout_width="match_parent"
