@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
      * This method hides the soft keyboard
      */
     public static void hideKeyboard(Activity activity) {
-        if (activity != null && activity.getWindow() != null && activity.getWindow().getDecorView() != null) {
+        if (activity != null && activity.getWindow() != null) {
             InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
             if (imm != null) {
                 imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);
@@ -46,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         View v = getCurrentFocus();
-        if (v != null
-                && (ev.getAction() == MotionEvent.ACTION_UP || ev.getAction() == MotionEvent.ACTION_MOVE)
+        if ((ev.getAction() == MotionEvent.ACTION_UP || ev.getAction() == MotionEvent.ACTION_MOVE)
                 && v instanceof EditText
                 && !v.getClass().getName().startsWith("android.webkit.")) {
             int screenCoordinates[] = new int[2];
