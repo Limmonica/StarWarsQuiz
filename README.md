@@ -1,4 +1,4 @@
-# Udacity Project no. 4: User Input
+# User Input
 
 # StarWars Quiz App
 
